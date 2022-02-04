@@ -9,6 +9,8 @@ test_string = """
     Dolo 650 
 """
 
+q1> find digits pattern.
+
 pattern = r"\d{3}.?-?\d{3}.\d{4}"
 res = re.finditer(pattern, test_string)
 for i in res:
@@ -17,6 +19,7 @@ for i in res:
 o/p: <re.Match object; span=(42, 54), match='123-867.6542'>
      <re.Match object; span=(55, 67), match='565.766.7643'>
 
+q2> find names staring with Mr
 
 name = r'Mr\s[A-Z][a-z]*'
 res1 = re.finditer(name,test_string)
