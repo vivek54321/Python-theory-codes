@@ -1,1 +1,27 @@
+test_string = """
+    amlu@mishra.gmail.com
+    vivek321@yahoo.com
+    123-867.6542
+    565.766.7643
+    Mr Chatur
+    Mr Shubham
+    Ms Marry
+    Dolo 650 
+"""
 
+pattern = r"\d{3}.?-?\d{3}.\d{4}"
+res = re.finditer(pattern, test_string)
+for i in res:
+    print(i)
+    
+o/p: <re.Match object; span=(42, 54), match='123-867.6542'>
+     <re.Match object; span=(55, 67), match='565.766.7643'>
+
+
+name = r'Mr\s[A-Z][a-z]*'
+res1 = re.finditer(name,test_string)
+for i in res1:
+    print(i)
+    
+o/p: <re.Match object; span=(68, 77), match='Mr Chatur'>
+     <re.Match object; span=(78, 88), match='Mr Shubham'>
