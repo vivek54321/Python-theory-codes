@@ -1,0 +1,68 @@
+<1> Write a Python program to remove duplicate element from a list using loop.
+
+# Input:- [10,1,11,1,29,876,768,10,11,1,92,29,876]
+# Output:- [10,1,11,29,876,768,92]
+
+-------------------------------  solution 1 -------------------------------------
+def sort_asc(lst_in):
+    for j in range(len(lst)-1):
+        for i in range(len(lst)-1):
+            if lst_in[i] > lst_in[i+1]:
+                temp = lst_in[i+1]
+                lst_in[i+1] = lst_in[i]
+                lst_in[i] = temp
+    return lst_in
+
+lst = [10,1,11,1,29,876,768,10,11,1,92,29,876]
+out_lst = sort_asc(lst)
+
+def remove_dup(lst1):
+    temp = []
+    for i in range(len(lst1) - 1):
+        if lst1[i] != lst1[i+1]:
+            temp.append(lst1[i])
+    return temp + [lst1[-1]]
+            
+final_list = remove_dup(out_lst)  
+print(final_list)
+print(out_lst)
+
+-------------------------- solution 2--------------------------------------
+
+lst = [10,1,11,1,29,876,768,10,11,1,92,29,876]
+out = []
+for i in lst:
+    if i not in out:
+        out.append(i)
+out
+
+--------------------------- solution 3 ------------------------------------
+ordered o/p
+
+lst1 = list(dict.fromkeys(lst))
+lst1
+
+---------------------------- solution 4 -----------------------------------
+unordered o/p
+
+lst2 = set(lst)
+lst2
+
+-------------------------------------------------------------------------------
+
+# Write a Python program to get a sorted list in increasing order of last element in each tuple in a given list using loop.
+
+#Input:- [(5,4),(9,1),(2,3),(5,9),(7,6),(5,5)]
+#output:- [(9,1),(2,3),(5,4),(5,5),(7,6),(5,9)]
+
+def sort_tuple(lst):
+    for j in range(len(lst)-1):
+        for i in range(len(lst)-1):
+            if lst[i][1] > lst[i+1][1]:
+                temp = lst[i+1]
+                lst[i+1] = lst[i]
+                lst[i] = temp
+    return lst
+
+sort_tuple([(5,4),(9,1),(2,3),(5,9),(7,6),(5,5)])
+
